@@ -22,22 +22,6 @@ public class UseDivision {
         System.out.println("---------------------------------");
         domDiv2.display();
         System.out.println("---------------------------------");
-
-        intDiv1.setDivision("TEST");
-        intDiv2.setAccountNumber(00000);
-        intDiv2.setLanguage("Test Lang");
-        domDiv1.setState("TEST");
-        domDiv2.setAccountNumber(0000);
-
-        System.out.println("---------------------------------");
-        intDiv1.display();
-        System.out.println("---------------------------------");
-        intDiv2.display();
-        System.out.println("---------------------------------");
-        domDiv1.display();
-        System.out.println("---------------------------------");
-        domDiv2.display();
-        System.out.println("---------------------------------");
     }
 }
 //abstract class for division
