@@ -7,8 +7,8 @@
  */
 import java.util.*;
 public class Fantest2 {
+    
     public static void main(String[] args){
-
         //creation 2 Fan instances obj(Fan.SPEED,ON/OFF,RADIUS,COLOR)
         Fan fanObj1 = new Fan();
         Fan fanObj2 = new Fan(Fan.FAST, true, 10, "yellow");
