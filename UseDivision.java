@@ -7,12 +7,28 @@
 * Creating instances of concrete division classes and displaying.
 */
 import java.util.*;
-class UseDivision {
+public class UseDivision {
     public static void main(String[] args) {
         InternationalDivision intDiv1 = new InternationalDivision("Global Trade Consult.", 12345, "France", "French");
         InternationalDivision intDiv2 = new InternationalDivision("Cross Cultural Relations", 789101, "Germany", "German");
         DomesticDivision domDiv1 = new DomesticDivision("Systems Administration", 111213, "California");
         DomesticDivision domDiv2 = new DomesticDivision("Financial Consulting", 141516, "New York");
+        System.out.println("---------------------------------");
+        intDiv1.display();
+        System.out.println("---------------------------------");
+        intDiv2.display();
+        System.out.println("---------------------------------");
+        domDiv1.display();
+        System.out.println("---------------------------------");
+        domDiv2.display();
+        System.out.println("---------------------------------");
+
+        intDiv1.setDivision("TEST");
+        intDiv2.setAccountNumber(00000);
+        intDiv2.setLanguage("Test Lang");
+        domDiv1.setState("TEST");
+        domDiv2.setAccountNumber(0000);
+
         System.out.println("---------------------------------");
         intDiv1.display();
         System.out.println("---------------------------------");
@@ -106,7 +122,7 @@ class DomesticDivision extends Division {
         return this.state;
     }
     //setter
-    public void setSate(String state){
+    public void setState(String state){
         this.state = state;
     }
     @Override
