@@ -57,6 +57,7 @@ public class GridDisplay {
         gridPane.add(new Label("Address"), 0, 3);
         gridPane.add(new TextField(), 1, 3);
         gridPane.add(btn, 1, 4);
+
         // Invoke static setHalignment to align elements positions within cell
         GridPane.setHalignment(btn, HPos.LEFT);
         // Loop through nodes to set label text to white and align right

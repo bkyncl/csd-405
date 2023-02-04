@@ -28,14 +28,17 @@ public class AccordDisplay {
         // Create an Accordion
         Accordion accordion = new Accordion();
 
+        // Add the TitledPanes to the Accordion
+        accordion.getPanes().addAll(pane1,pane2,pane3);
+        // Set pane to be expanded upon open
+        accordion.setExpandedPane(pane2);
+
         // Set styling to accordion and Tilted panes
         accordion.setStyle(layoutstyle);
         pane1.setStyle(labelstyle);
         pane2.setStyle(labelstyle);
         pane3.setStyle(labelstyle);
         
-        // Add the TitledPanes to the Accordion
-        accordion.getPanes().addAll(pane1,pane2,pane3);
         
         // Create button and set action to close
         Button btn = new Button("Close");
@@ -46,7 +49,7 @@ public class AccordDisplay {
 
         // Create a VBox layout for accordion display
         VBox toplayout = new VBox(50);
-        toplayout.getChildren().addAll(accordion);
+        toplayout.getChildren().add(accordion);
         toplayout.setAlignment(Pos.TOP_CENTER);// Position accordion top center of VBox
 
         // Create a separate VBox layout for close button
@@ -62,7 +65,7 @@ public class AccordDisplay {
         // Set the vertical spacing between children to 30px
         root.setSpacing(30);
 
-        // Create a Scene and add the Accordion to it
+        // Create a Scene and add the root layout to it
         Scene scene = new Scene(root, 300,200);
         
         // Set the stage title
