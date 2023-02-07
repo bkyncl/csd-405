@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -78,15 +79,15 @@ public class JavaFXDemo extends Application {
         pane.setStyle(layoutstyle);
         pane.getChildren().addAll(ellipses);
     
-        //Create flow pane to hold stackpane and layout1 separately
-        FlowPane flowpane = new FlowPane(pane,layout1);
-        flowpane.setStyle(layoutstyle);
-        flowpane.setMinSize(600, 400);
-        flowpane.setAlignment(Pos.CENTER); // center nodes in flowpane
-        flowpane.setHgap(50);
+        //Create Hbox to hold stackpane and layout1 separately
+        HBox hbox = new HBox(pane,layout1);
+        hbox.setStyle(layoutstyle);
+        hbox.setMinSize(600, 400);
+        hbox.setAlignment(Pos.CENTER); // center nodes in flowpane
+        hbox.setSpacing(40);
 
         //Create a new scene with flowpane
-        scene3 = new Scene(flowpane,600,400);
+        scene3 = new Scene(hbox,600,400);
         
         //Set the stage with scene
         primaryStage.setScene(scene3);
@@ -102,7 +103,7 @@ class Graphic {
     //This method creates a looped ellipse graphic object
     public List<Ellipse> paint() {
         List<Ellipse> ellipses = new ArrayList<>();
-        for (int i = 0; i < 90; i++) {
+        for (int i = 0; i < 58; i++) {
             Ellipse ei = new Ellipse(140, 70);
             ei.setStroke(Color.color(Math.random(),Math.random(),Math.random()));
             ei.setRotate(i * 90 / 16);
