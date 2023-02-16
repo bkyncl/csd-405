@@ -155,8 +155,9 @@ class CardDeck {
             card.setFitWidth(100);
             card.setFitHeight(148);
             pulledCards.add(card);
-            hbox.getChildren().add(card);
+            
         }
+        hbox.getChildren().addAll(pulledCards);
         return hbox;
     }
 }
