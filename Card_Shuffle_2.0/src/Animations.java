@@ -47,23 +47,13 @@ class Animations { // Animations class to add animations to card images
     // Method to add sliding animation to object
     public Pane addSlidingImageView(int num) {
         //added switch case to maintain animation endpoint based on number of images
-        int result = 0;
+        int result= 0;
         switch (num) {
-        case 1:
-            result = 378;
-            break;
-        case 2:
-            result = 425;
-            break;
-        case 3:
-            result = 475;
-            break;
-        case 4:
-            result = 520;
-            break;
-        case 5:
-            result = 575;
-            break;
+        case 1: result = 378; break;
+        case 2: result = 425; break;
+        case 3: result = 475; break;
+        case 4: result = 520; break;
+        case 5: result = 575; break;
         }
         Pane pane = new Pane();
         for(int i=0; i<num;i++) {
