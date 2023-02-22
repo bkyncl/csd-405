@@ -1,0 +1,49 @@
+/*style.css
+* Module 11 Assignment 
+* Name: Brittany Kyncl
+* Date: 2.22.23
+* Course: CSD405
+* External css style sheet for FigureDisplay.java FX app.
+*/
+.root {
+    -fx-background-color: linear-gradient(#ffffffb8,#758d90a8);
+    -fx-font-family: Oswald, Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+#heading {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-padding: 20px;
+}
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+#slider {
+    -fx-padding: 20px;
+}
+.radio-button .radio {
+    -fx-background-color: linear-gradient(#91eb999d, #242827a1);
+    -fx-border-color: #101010;
+    -fx-border-radius: 50%;
+}
+.radio-button:selected .radio {
+    -fx-background-color: linear-gradient(#242827a1,#91eb999d);
+    -fx-border-color: #101010;
+}
+.radio-button:selected .dot {
+    -fx-background-color: #352e2e;
+    
+}
+.check-box .box {
+    -fx-background-color: linear-gradient(#91eb999d, #242827a1);
+    -fx-border-color: #101010;
+    -fx-border-radius: 2px;
+}
+.check-box:selected .box {
+    -fx-background-color: linear-gradient(#242827a1,#91eb999d);
+    -fx-border-color: #101010;
+}
+.check-box:selected .mark {
+    -fx-background-color: #352e2e; 
+}
