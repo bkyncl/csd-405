@@ -8,15 +8,12 @@
 * Each draw pulls from a newly shuffled arraylist meaning random selection of x cards displayed each.
 */
 
-import java.util.LinkedHashMap;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
@@ -41,20 +38,12 @@ public class CardGame extends Application {
         // create new animation to spin card image
         Animations deckspin = new Animations(new Image("cards/b1fv.png"));
 
-        //Use linkedhashmap to map menu string values to integer values
-        LinkedHashMap<String, Integer> choicesMap = new LinkedHashMap<>();
-        choicesMap.put("1 Card", 1);
-        choicesMap.put("2 Cards", 2);
-        choicesMap.put("3 Cards", 3);
-        choicesMap.put("4 Cards", 4);
-        choicesMap.put("5 Cards", 5);
-
-        ObservableList<String> choices = FXCollections.observableArrayList(choicesMap.keySet());
-
         //Create new drop down menu for number of cards to draw
-        ChoiceBox<String> menuBox = new ChoiceBox<String>(choices);
+        ComboBox<String> menuBox = new ComboBox<String>();
+        menuBox.getItems().addAll("1 Card", "2 Cards", "3 Cards", "4 Cards", "5 Cards");
         //set default value of card draw
-        menuBox.setValue("4 Cards");
+        menuBox.getSelectionModel().select(3);
+        // menuBox.setValue("4 Cards");
         menuBox.setStyle(buttonstyle);
 
         //Create buttons and labels
@@ -95,7 +84,7 @@ public class CardGame extends Application {
 
         // Setting button actions
         btn1.setOnAction(e -> {//button action to display Card draw in new window
-            int play = getChoice(menuBox, choicesMap);//retreive number of cards to play from user menu selection matching value in hashmap
+            int play = menuBox.getSelectionModel().getSelectedIndex()+1;//retreive number of cards to play from user menu selection
             //Send number of cards to play to draw
             boolean result = Draw.display("Card Draw",play);
             if(result == true) {//on menu return animation re-starts
@@ -112,11 +101,5 @@ public class CardGame extends Application {
 
         // Show stage
         primaryStage.show();
-    }
-    //method to get value from choice box and matching integer value from hashmap
-    private int getChoice(ChoiceBox<String> choiceBox, LinkedHashMap<String, Integer> choicesMap) {
-        String playnumString = choiceBox.getValue();
-        int playnum = choicesMap.get(playnumString);
-        return playnum;
     }
 }
