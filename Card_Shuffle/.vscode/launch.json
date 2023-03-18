@@ -4,13 +4,14 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "java",
-            "name": "Launch practice",
+            "name": "CardGame",
             "request": "launch",
-            "mainClass": "practice",
+            "mainClass": "CardGame",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-19.0.2.1/lib\" --add-modules javafx.controls,javafx.fxml",
-            "projectName": "Card_Shuffle_7444b4a7"
+            "projectName": "Card_Shuffle_3dd8fff3"
         },
         {
             "type": "java",
