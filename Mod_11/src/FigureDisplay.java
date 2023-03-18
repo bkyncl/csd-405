@@ -18,8 +18,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -43,13 +41,14 @@ public class FigureDisplay extends Application {
     private Ellipse ellipse = new Ellipse(100, 50);
     private BorderPane root;
     private final Random random = new Random();
-    private Shape currentshape;
+    private Shape currentshape = circle;
     private Color strokeColor = Color.BLACK;
     private boolean fill = false;
     private boolean stroke = true;
 
     @Override
     public void start(Stage stage) {
+        
         // Create shape radio buttons and label
         Label heading = new Label("Shape Painter");
         heading.setId("heading");
